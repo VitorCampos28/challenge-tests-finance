@@ -8,7 +8,7 @@
 import XCTest
 @testable import FinanceApp
 
-class FinanceServiceTests: XCTestCase {
+final class FinanceServiceTests: XCTestCase {
     let sut = FinanceServiceSpy()
     
     func test_fetchUserProfile_shouldHaveUserProfileData() {
