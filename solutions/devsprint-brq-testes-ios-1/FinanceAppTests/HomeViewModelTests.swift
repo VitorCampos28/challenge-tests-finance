@@ -52,8 +52,23 @@ class HomeViewModelDelegateSpy: HomeViewModelDelegate {
 
 class FinanceServiceSpy: FetchHomeDataProtocol {
     
+    let dataUserJsonMock =
+ """
+ {
+    "name": "Irma Flores",
+    "phone": "+55 (11) 99999-9999",
+    "email": "irma@devpass.com.br",
+    "address": "Rua Bela Cintra, 495",
+    "account": {
+        "agency": "0001",
+        "account": "123456-7"
+    }
+ }
+ """.data(using: .utf8)
+
     var homeData: HomeData? = HomeData(balance: 0, savings: 0, spending: 0, activity: [Activity(name: "", price: 0, time: "")])
     var fetchHomeDataIsCalled: Bool = false
+    var fetchUserIsCalled: Bool = false
     
     func fetchHomeData(_ completion: @escaping (FinanceApp.HomeData?) -> Void) {
         fetchHomeDataIsCalled = true
