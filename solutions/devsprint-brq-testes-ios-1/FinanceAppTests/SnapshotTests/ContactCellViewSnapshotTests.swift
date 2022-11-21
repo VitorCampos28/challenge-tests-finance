@@ -3,7 +3,7 @@ import SnapshotTesting
 
 @testable import FinanceApp
 
-class ContactCellViewSnapshotTests: XCTestCase {
+final class ContactCellViewSnapshotTests: XCTestCase {
     let sut = ContactCellView()
     
     func test_ContactCellView_ShouldHaveTheRightAppearence() {
